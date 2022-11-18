@@ -10,4 +10,8 @@ class HomeController extends Controller
     {
         return view('frontEnd.home.home');
     }
+    public function singlePost()
+    {
+        return view('frontEnd.singlepost.singlepostblog');
+    }
 }
