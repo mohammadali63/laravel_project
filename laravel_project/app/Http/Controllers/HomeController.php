@@ -14,4 +14,8 @@ class HomeController extends Controller
     {
         return view('frontEnd.singlepost.singlepostblog');
     }
+    public function categories()
+    {
+        return view('frontEnd.categories.category');
+    }
 }
