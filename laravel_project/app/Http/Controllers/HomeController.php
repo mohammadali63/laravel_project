@@ -18,4 +18,9 @@ class HomeController extends Controller
     {
         return view('frontEnd.categories.category');
     }
+    public function about()
+    {
+        return view('frontEnd.about.about');
+    }
+
 }

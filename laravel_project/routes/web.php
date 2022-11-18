@@ -22,4 +22,12 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/singlepostblog',[HomeController::class,'singlePost'])->name('singlepostblog');
 
-Route::get('categories',[HomeController::class,'categories'])->name('category');
+Route::get('/categories',[HomeController::class,'categories'])->name('category');
+
+Route::get('/about',[HomeController::class,'about'])->name('about');
+
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+
+
+
+
