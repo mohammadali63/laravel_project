@@ -18,4 +18,6 @@ use App\Http\Controllers\LaravelCrudController;
 //    return view('welcome');
 //});
 
-Route::get('/',[\App\Http\Controllers\LaravelCrudController::class,'index'])->name('home');
+Route::get('/',[LaravelCrudController::class,'index'])->name('home');
+
+Route::post('/',[LaravelCrudController::class,'save'])->name('new.blog');
