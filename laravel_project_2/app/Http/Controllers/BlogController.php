@@ -10,4 +10,9 @@ class BlogController extends Controller
     {
         return view('add-blog');
     }
+
+    public function manage()
+    {
+        return view('manage');
+    }
 }
