@@ -10,4 +10,8 @@ class DepartmentController extends Controller
     {
         return view('crud.dept.add');
     }
+    public function deptManage()
+    {
+        return view('crud.dept.manage');
+    }
 }

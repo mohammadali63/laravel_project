@@ -23,3 +23,4 @@ Route::get('/',[SmsController::class,'index'])->name('home');
 Route::get('/manage',[SmsController::class,'manage'])->name('manage');
 
 Route::get('/dept-add',[DepartmentController::class,'deptAdd'])->name('dept.add');
+Route::get('/dept-manage',[DepartmentController::class,'deptManage'])->name('dept.manage');
