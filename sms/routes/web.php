@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SmsController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ use App\Http\Controllers\SmsController;
 //});
 
 Route::get('/',[SmsController::class,'index'])->name('home');
+Route::get('/manage',[SmsController::class,'manage'])->name('manage');
+
+Route::get('/dept-add',[DepartmentController::class,'deptAdd'])->name('dept.add');

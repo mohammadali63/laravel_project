@@ -10,4 +10,9 @@ class SmsController extends Controller
     {
         return view('crud.info.student-add');
     }
+
+    public function manage()
+    {
+        return view('crud.info.student-manage');
+    }
 }
