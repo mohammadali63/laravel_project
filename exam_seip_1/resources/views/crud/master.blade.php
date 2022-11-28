@@ -35,7 +35,7 @@
                                                                 <a class="nav-link" href="{{ route('section') }}">Section</a>
                             </li>
                             <li class="nav-item">
-                                {{--                                <a class="nav-link" href="{{ route('dept.manage') }}">Section</a>--}}
+                                                                <a class="nav-link" href="{{ route('department') }}">Department</a>
                             </li>
 
                         </ul>

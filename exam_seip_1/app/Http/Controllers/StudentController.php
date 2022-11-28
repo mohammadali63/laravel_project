@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\department;
 use App\Models\section;
 use App\Models\student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -13,12 +15,21 @@ class StudentController extends Controller
     {
         return view('crud.student.add',[
             'sections' => section::all()
+        ],
+        [
+            'departments' => department::all()
         ]);
     }
     public function manage()
     {
+
         return view('crud.student.manage',[
-            'students' => student::all()
+            'students' => DB::table('students')
+                ->join('departments','students.dept_id','=','departments.id')
+                ->join('sections','students.section_id','=','sections.id')
+                ->select('students.*','departments.dept_name','sections.section_name')
+                ->get()
+//        student::all()
         ]);
     }
 
@@ -46,5 +57,11 @@ class StudentController extends Controller
        $this->image->move($this->drive,$this->imageNewName);
        return $this->imageUrl;
 
+    }
+    public function delete(Request $request)
+    {
+        $this->student = student::find($request->name_id);
+        $this->student->delete();
+        return redirect(route('manage.info'));
     }
 }

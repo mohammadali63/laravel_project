@@ -24,11 +24,12 @@
                                 <input type="email" class="form-control" name="email">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Department ID</label>
+                                <label class="form-label">Department Code</label>
                                 <select name="dept_id" id="" class="form-control">
                                     <option>department id</option>
-                                    <option value="1">A</option>
-                                    <option value="2">B</option>
+                                    @foreach($departments as $department)
+                                        <option value="{{$department->id }}">{{$department->dept_code }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">

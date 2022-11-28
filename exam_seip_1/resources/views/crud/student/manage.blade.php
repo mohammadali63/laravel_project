@@ -17,9 +17,10 @@
                                 <th>Student Name</th>
                                 <th>Phone Number</th>
                                 <th>Email</th>
+{{--                                <th>Department Name</th>--}}
                                 <th>Department Name</th>
-                                <th>Department Code</th>
-                                <th>Section Name</th>
+{{--                                <th>Section Name</th>--}}
+                                <th>Section ID</th>
                                 <th>Addres</th>
                                 <th>Image</th>
                                 <th>Action</th>
@@ -30,15 +31,23 @@
                                 <td>{{$student->student_name}}</td>
                                 <td>{{$student->phone_number}}</td>
                                 <td>{{$student->email}}</td>
-                                <td>{{$student->department_name}}</td>
-                                <td>{{$student->dept_id}}</td>
+{{--                                <td>{{$student->department_name}}</td>--}}
+                                <td>{{$student->dept_name}}</td>
                                 <td>{{$student->section_name}}</td>
+{{--                                <td>{{$student->section_name}}</td>--}}
                                 <td>{{$student->addres}}</td>
                                 <td>
                                     <img src="{{asset($student->image)}}" class="img-fluid w-75 h-75"/>
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <a href="" class="btn btn-outline-warning">Edit</a>
+                                    <form action="{{route('delete')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="name_id" value="{{$student->id}}">
+                                        <button type="submit" onclick="return confirm('Are you sure delete this.......')" class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                </td>
+
                             </tr>
                             @endforeach
 
