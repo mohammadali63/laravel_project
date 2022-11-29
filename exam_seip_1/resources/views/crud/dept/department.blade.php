@@ -4,7 +4,7 @@
     Department
 @endsection
 
-    @section('cotent')
+    @section('content')
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -26,6 +26,10 @@
                                 <div class="mb-3">
                                     <input type="submit" value="submit" class="form-control btn btn-outline-success">
                                 </div>
+                                <div class="mb-3">
+                                    <a href="{{route('manage.dept')}}" class="btn btn-outline-primary form-control">Mannage Department</a>
+                                </div>
+
                             </form>
                         </div>
                     </div>

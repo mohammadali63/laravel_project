@@ -29,13 +29,13 @@
                                 <a class="nav-link" href="{{ route('home') }}">student Add Form</a>
                             </li>
                             <li class="nav-item">
-                                                                <a class="nav-link" href="{{ route('manage.info') }}">student manage table</a>
+                                <a class="nav-link" href="{{ route('manage.infos') }}">student manage</a>
                             </li>
                             <li class="nav-item">
-                                                                <a class="nav-link" href="{{ route('section') }}">Section</a>
+                                <a class="nav-link" href="{{ route('section') }}">Section</a>
                             </li>
                             <li class="nav-item">
-                                                                <a class="nav-link" href="{{ route('department') }}">Department</a>
+                                <a class="nav-link" href="{{ route('department') }}">Department</a>
                             </li>
 
                         </ul>
@@ -47,7 +47,7 @@
     </div>
 </div>
 
-@yield('cotent')
+@yield('content')
 
 
 <script src="{{ asset('asset') }}/js/bootstrap.bundle.js"></script>

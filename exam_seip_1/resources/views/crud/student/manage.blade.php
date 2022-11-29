@@ -2,7 +2,7 @@
 @section('title')
     Student Manage
 @endsection
-@section('cotent')
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -24,8 +24,9 @@
                                 <th>Addres</th>
                                 <th>Image</th>
                                 <th>Action</th>
+                                <th>Action</th>
                             </tr>
-                            @foreach($students as $student)
+                            @foreach($getStudentData as $student)
                             <tr>
                                 <td>{{$student->id}}</td>
                                 <td>{{$student->student_name}}</td>
@@ -40,10 +41,12 @@
                                     <img src="{{asset($student->image)}}" class="img-fluid w-75 h-75"/>
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-outline-warning">Edit</a>
+                                    <a href="{{route('edit',['id'=>$student->id])}}" class="btn btn-outline-warning">Edit</a>
+                                </td>
+                                <td>
                                     <form action="{{route('delete')}}" method="post">
                                         @csrf
-                                        <input type="hidden" name="name_id" value="{{$student->id}}">
+                                        <input type="hidden" name="name_ids" value="{{$student->id}}">
                                         <button type="submit" onclick="return confirm('Are you sure delete this.......')" class="btn btn-outline-danger">Delete</button>
                                     </form>
                                 </td>

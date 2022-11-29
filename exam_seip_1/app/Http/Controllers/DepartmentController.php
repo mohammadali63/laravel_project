@@ -20,4 +20,17 @@ class DepartmentController extends Controller
         $this->departments->save();
         return redirect(route('department'));
     }
+    public function managedept()
+    {
+        return view('crud.dept.managedept',[
+            'departments'=>department::all()
+        ]);
+    }
+    public function deleteDept(Request $request)
+    {
+        $this->departments = department::find($request->dept_delete);
+        $this->departments->delete();
+        return redirect(route('manage.dept'));
+
+    }
 }
