@@ -20,3 +20,4 @@ use App\Http\Controllers\BlogController;
 //});
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/new-blog',[BlogController::class,'addBlog'])->name('add.blog');
+Route::post('/save-blog',[BlogController::class,'saveBlog'])->name('save.blog');

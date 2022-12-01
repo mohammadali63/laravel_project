@@ -13,7 +13,7 @@
                         <h1>Add Blog Form</h1>
                     </div>
                     <div class="card-body">
-                        <form action="" method=""  >
+                        <form action="{{route('save.blog')}}" method="post" enctype="multipart/form-data" >
                             @csrf
                             <div class="mt-3">
                                 <label class="form-label">Title</label>
