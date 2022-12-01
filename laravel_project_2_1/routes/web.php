@@ -19,4 +19,4 @@ use App\Http\Controllers\BlogController;
 //    return view('welcome');
 //});
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/new-blog',[BlogController::class,''])->name('');
+Route::get('/new-blog',[BlogController::class,'addBlog'])->name('add.blog');
