@@ -44,7 +44,6 @@ class Blog extends Model
 //    }
     public static function newBlog($request)
     {
-
         self::$blog = new Blog();
         self::$blog->title = $request->title;
         self::$blog->category_id = $request->category_id;
@@ -62,5 +61,24 @@ class Blog extends Model
         self::$imgurl = self::$directory.self::$imageNewName;
         self::$image->move(self::$directory,self::$imageNewName);
         return self::$imgurl;
+    }
+    public static function updateBlog($request)
+    {
+        self::$blog = Blog::find($request->blog_id);
+        self::$blog->title = $request->title;
+        self::$blog->category_id = $request->category_id;
+        self::$blog->author = $request->author;
+        self::$blog->description = $request->description;
+        if ($request->file('image'))
+        {
+            if (self::$blog->image)
+            {
+                unlink(self::$blog->image);
+            }
+            self::$blog->image = self::getImgUrl($request);
+        }
+        self::$blog->status = $request->status;
+        self::$blog->save();
+
     }
 }

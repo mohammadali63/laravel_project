@@ -51,4 +51,16 @@ class BlogController extends Controller
         $this->blog->delete();
         return back()->with('massage','delete Successfully');
     }
+    public function edit($id)
+    {
+        return view('edit',[
+            'blogs'=>Blog::find($id),
+        ]);
+    }
+    public function updateBlog(Request $request)
+    {
+        Blog::updateBlog($request);
+        return redirect(route('manage.blog'))->with('massage','delete Successfully');
+
+    }
 }

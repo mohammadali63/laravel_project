@@ -25,13 +25,14 @@
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
+                            @php $i=1 @endphp
                             @foreach($blogs as $blog)
                             <tr>
-                                <td>{{ $blog['id'] }}</td>
-                                <td>{{$blog['title']}}</td>
-                                <td>{{$blog['category_id']}}</td>
-                                <td>{{$blog['author']}}</td>
-                                <td>{{$blog['description']}}</td>
+                                <td>{{$i++}}</td>
+                                <td>{{$blog->title}}</td>
+                                <td>{{$blog->category_id}}</td>
+                                <td>{{$blog->author}}</td>
+                                <td>{{$blog->description}}</td>
                                 <td>
                                     <img src="{{asset($blog->image)}}" alt="" class="img-fluid h-100 w-100">
                                 </td>
@@ -39,7 +40,7 @@
                                    {{ $blog['status'] == 1 ? 'Published' : 'Unpublished' }}
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-primary">Edit</a>
+                                    <a href="{{route('edit',['id'=>$blog->id])}}" class="btn btn-primary">Edit</a>
                                     @if($blog->status == 1)
                                         <a href="{{ route('status', ['id'=>$blog->id])}}" class="btn btn-success">Published</a>
                                     @else
