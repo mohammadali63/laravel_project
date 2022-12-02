@@ -29,6 +29,8 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('manage.blog')}}">Manage Blog</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" href="{{route('category.name')}}">Category</a>
                             </li>
                         </ul>
 

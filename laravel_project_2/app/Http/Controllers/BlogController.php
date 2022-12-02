@@ -60,7 +60,7 @@ class BlogController extends Controller
     public function updateBlog(Request $request)
     {
         Blog::updateBlog($request);
-        return redirect(route('manage.blog'))->with('massage','delete Successfully');
+        return redirect(route('manage.blog'))->with('massage','Update Successfully');
 
     }
 }
