@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardConteroller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +45,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/update-category',[CategoryController::class,'updateCategory'])->name('update.category');
     Route::post('/delete-category',[CategoryController::class,'deleteCategory'])->name('delete.category');
 
-    Route::get('/author',[CategoryController::class,'author'])->name('author');
+    Route::get('/author',[AuthorController::class,'author'])->name('author');
+    Route::post('/author-save',[AuthorController::class,'authorSave'])->name('author.save');
+    Route::get('/edit-author/{id}',[AuthorController::class,'editAuthor'])->name('edit.author');
+    Route::post('/update-author',[AuthorController::class,'updateAuthor'])->name('update.author');
+    Route::post('/delete-author',[AuthorController::class,'deleteAuthor'])->name('delete.author');
+
+    Route::get('/blog',[BlogController::class,'index'])->name('blog');
+    Route::post('/new-blog',[BlogController::class,'saveBlog'])->name('new.blog');
+    Route::get('manage-blog',[BlogController::class,'manageBlog'])->name('manage.blog');
 
 });
 

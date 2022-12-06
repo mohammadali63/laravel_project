@@ -5,17 +5,17 @@
             <hr/>
             <div class="card">
                 <div class="card-body">
-                    <form action="{{route('category.create')}}" method="post">
+                    <form action="{{route('author.save')}}" method="post">
                         @csrf
                         <div class="border p-4 rounded">
                             <div class="card-title d-flex align-items-center">
-                                <h5 class="mb-0">Add Category</h5>
+                                <h5 class="mb-0">Author Form</h5>
                             </div>
                             <hr/>
                             <div class="row mb-3">
-                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Category Name</label>
+                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">Author Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="category" id="inputEnterYourName" placeholder="Enter Your Name">
+                                    <input type="text" class="form-control" name="author_name" id="inputEnterYourName" placeholder="Enter Your Name">
                                 </div>
                             </div>
 
@@ -40,27 +40,24 @@
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
                             <th>SL</th>
-                            <th>Category Name</th>
-                            <th>Status</th>
+                            <th>Author Name</th>
                             <th>Action</th>
                         </tr>
                         @php $i=1 @endphp
-                        @foreach($categories as $category)
+                        @foreach($authors as $author)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$category->category}}</td>
-                                <td>
-                                    {{$category->status ==1 ? 'published' : 'unpublished'}}
-                                </td>
-                                <td>
-                                    <a href="{{route('edit.category',['id'=>$category->id])}}" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></a>
+                                <td>{{$author->author_name}}</td>
+                                <td class="d-flex">
+                                        <a href="{{route('edit.author',['id'=>$author->id])}}" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></a>
 
-                                    <form action="{{route('delete.category')}}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="namedelete_id" value="{{$category->id}}">
-                                        <button type="submit" onclick="return confirm('Are you sure delete this.......')" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
-                                    </form>
+                                        <form action="{{route('delete.author')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="namedelete_id" value="{{$author->id}}">
+                                            <button type="submit" onclick="return confirm('Are you sure delete this.......')" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
+                                        </form>
                                 </td>
+
                             </tr>
                         @endforeach
                     </table>

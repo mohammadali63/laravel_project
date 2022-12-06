@@ -10,6 +10,9 @@
             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="settings">
                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#settings" type="button"><i class="bi bi-gear"></i></button>
             </li>
+            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="blog">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#blog" type="button"><i class="bi bi-gear"></i></button>
+            </li>
 
         </ul>
     </div>
@@ -42,7 +45,19 @@
                         <small class="mb-0">Some placeholder content</small>
                     </div>
                     <a href="{{route('category')}}" class="list-group-item"><i class="bi bi-envelope"></i>Category</a>
-                    <a href="app-chat-box.html" class="list-group-item"><i class="bi bi-chat-left-text"></i>Author</a>
+                    <a href="{{route('author')}}" class="list-group-item"><i class="bi bi-chat-left-text"></i>Author</a>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="blog">
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-0">Settings</h5>
+                        </div>
+                        <small class="mb-0">Some placeholder content</small>
+                    </div>
+                    <a href="{{route('blog')}}" class="list-group-item"><i class="bi bi-envelope"></i>Add Blog</a>
+                    <a href="{{route('manage.blog')}}" class="list-group-item"><i class="bi bi-chat-left-text"></i>Manage Blog</a>
                 </div>
             </div>
         </div>
