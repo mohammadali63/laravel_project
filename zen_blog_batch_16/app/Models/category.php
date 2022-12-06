@@ -14,5 +14,12 @@ class category extends Model
         self::$category->category = $request->category;
         self::$category->save();
     }
+    public static function updateCategories($request)
+    {
+        self::$category = category::find($request->category_id);
+        self::$category->category = $request->category;
+        self::$category->status = $request->status;
+        self::$category->save();
+    }
 
 }

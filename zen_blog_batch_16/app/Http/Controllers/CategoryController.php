@@ -20,4 +20,22 @@ class CategoryController extends Controller
        return back();
 
    }
+   public function editCategory($id)
+   {
+       return view('admin.category.edit-category',[
+           'categories'=>category::find($id)
+       ]);
+   }
+   public function updateCategory(Request $request)
+   {
+       category::updateCategories($request);
+       return redirect(route('category'))->with('massage','Update Successfully');
+   }
+
+   public function deleteCategory(Request $request)
+   {
+       $this->category = category::find($request->namedelete_id);
+       $this->category->delete();
+       return back()->with('massage','delete Successfully');
+   }
 }
