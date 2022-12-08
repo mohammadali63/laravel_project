@@ -76,7 +76,7 @@
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">Status</label>
                                 <div class="col-sm-9">
-                                    <input type="radio" value="1"  name="status">Pulish &nbsp;
+                                    <input type="radio" value="1"  name="status">Publish &nbsp;
                                     <input type="radio" value="2" name="status">Unpublish
                                 </div>
                             </div>

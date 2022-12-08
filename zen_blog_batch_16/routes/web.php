@@ -54,6 +54,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/blog',[BlogController::class,'index'])->name('blog');
     Route::post('/new-blog',[BlogController::class,'saveBlog'])->name('new.blog');
     Route::get('manage-blog',[BlogController::class,'manageBlog'])->name('manage.blog');
+    Route::get('status/{id}',[BlogController::class,'satatus'])->name('status');
 
 });
 

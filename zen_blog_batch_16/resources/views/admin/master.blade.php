@@ -20,6 +20,7 @@
 
     <!-- loader-->
     <link href="{{asset('adminAsset')}}/assets/css/pace.min.css" rel="stylesheet" />
+    <link href="{{asset('adminAsset')}}/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
 
     <!--Theme Styles-->
@@ -73,6 +74,11 @@
 <!--app-->
 <script src="{{asset('adminAsset')}}/assets/js/app.js"></script>
 <script src="{{asset('adminAsset')}}/assets/js/index.js"></script>
+
+
+<script src="{{asset('adminAsset')}}/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('adminAsset')}}/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+<script src="{{asset('adminAsset')}}/assets/js/table-datatable.js"></script>
 
 <script>
     new PerfectScrollbar(".best-product")

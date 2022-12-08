@@ -63,4 +63,19 @@ class BlogController extends Controller
             ->get()
         ]);
     }
+    public function satatus($id)
+    {
+        $this->blog = blog::find($id);
+        if ($this->blog->status == 1)
+        {
+            $this->blog->status = 2;
+            $this->blog->save();
+        }
+        else
+        {
+            $this->blog->status = 1;
+            $this->blog->save();
+        }
+        return back();
+    }
 }
