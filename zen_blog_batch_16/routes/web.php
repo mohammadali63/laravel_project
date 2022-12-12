@@ -32,6 +32,9 @@ Route::get('/about',[HomeController::class,'about'])->name('about');
 
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
+Route::get('/user-register',[HomeController::class,'userRegister'])->name('user.register');
+Route::post('/user-register',[HomeController::class,'saveUser'])->name('user.register');
+
 
 
 

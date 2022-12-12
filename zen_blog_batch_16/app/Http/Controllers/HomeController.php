@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\blog;
+use App\Models\BlogUser;
 use Illuminate\Http\Request;
 use DB;
 use mysql_xdevapi\Table;
@@ -61,5 +62,14 @@ class HomeController extends Controller
     public function contact()
     {
         return view('frontEnd.contact.contact');
+    }
+    public function userRegister()
+    {
+        return view('frontEnd.user.user-register');
+    }
+    public function saveUser(Request $request)
+    {
+        BlogUser::saveUser($request);
+        return back();
     }
 }
