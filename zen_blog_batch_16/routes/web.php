@@ -24,13 +24,13 @@ Route::get('/', function () {return view('welcome');
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
-Route::get('blog-details',[HomeController::class,'BlogDetails'])->name('blog.details');
+Route::get('/blog-details/{slug}',[HomeController::class,'BlogDetails'])->name('blog.details');
 
-Route::get('categories',[HomeController::class,'categories'])->name('category');
+Route::get('/categoriesBlog',[HomeController::class,'categories'])->name('category.blog');
 
-Route::get('about',[HomeController::class,'about'])->name('about');
+Route::get('/about',[HomeController::class,'about'])->name('about');
 
-Route::get('contact',[HomeController::class,'contact'])->name('contact');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 
 

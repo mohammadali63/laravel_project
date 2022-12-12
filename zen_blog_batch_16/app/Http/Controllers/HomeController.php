@@ -14,21 +14,40 @@ class HomeController extends Controller
             ->join('categories','blogs.category_id','categories.id')
             ->select('blogs.*','categories.category')
             ->where('blogs.status',1)
-            ->where('blog_type','populer')
-            ->orderby('blogs.id','asc')
-            ->take(1)
+            ->where('blog_type','trending')
+//            ->take(1)
             ->get();
 //            return $blogs;
 
 
 
         return view('frontEnd.home.home',[
-            'blogs'=>blog::all()
+            'blogs'=>$blogs
         ]);
     }
-    public function BlogDetails()
+    public function BlogDetails($slug)
     {
-        return view('frontEnd.blog.blog-details');
+        $blog=DB::table('blogs')
+            ->join('categories','blogs.category_id','categories.id')
+            ->join('authors','blogs.author_id','authors.id')
+            ->select('blogs.*','categories.category','authors.author_name')
+            ->where('slug',$slug)
+            ->first();
+
+        $catId = $blog->category_id;
+        $categoryWiseBlog=DB::table('blogs')
+            ->join('categories','blogs.category_id','categories.id')
+            ->join('authors','blogs.author_id','authors.id')
+            ->select('blogs.*','categories.category','authors.author_name')
+            ->where('blogs.category_id',$catId)
+            ->get();
+
+
+        return view('frontEnd.blog.blog-details',[
+            'blog'=>$blog,
+            'categoryWiseBlog'=>$categoryWiseBlog
+
+        ]);
     }
 
     public function categories()

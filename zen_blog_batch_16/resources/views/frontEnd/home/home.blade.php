@@ -87,9 +87,9 @@
                             @foreach($blogs as $blog)
 
                             <div class="post-entry-1">
-                                <a href={{route('blog.details')}}><img src="{{asset($blog->image)}}" alt="" class="img-fluid"></a>
+                                <a href="{{route('blog.details',['slug'=>$blog->slug])}}"><img src="{{asset($blog->image)}}" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">{{$blog->category}}</span> <span class="mx-1">&bullet;</span> <span>{{$blog->date}}</span></div>
-                                <h2><a href="single-post.html">{{$blog->title}}</a></h2>
+                                <h2><a href="{{route('blog.details',['slug'=>$blog->slug])}}">{{$blog->title}}</a></h2>
                             </div>
 
                             @endforeach
