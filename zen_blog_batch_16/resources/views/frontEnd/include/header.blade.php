@@ -26,7 +26,14 @@
         </nav><!-- .navbar -->
 
         <div class="position-relative">
-            <a href="{{route('user.register')}}" class="mx-2 btn btn-outline-primary">Registraition</a>
+            @if(Session::get('userId'))
+                <a href="" class="mx-2 btn btn-outline-primary">{{Session::get('userName')}}</a>
+                <a href="{{route('user.logout')}}" class="mx-2 btn btn-outline-primary">logout</a>
+            @else
+                <a href="{{route('user.register')}}" class="mx-2 btn btn-outline-primary">Registraition</a>
+                <a href="{{route('user.login')}}" class="mx-2 btn btn-outline-primary">Login</a>
+            @endif
+
             <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
             <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
             <a href="#" class="mx-2"><span class="bi-instagram"></span></a>

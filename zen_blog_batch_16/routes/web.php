@@ -33,7 +33,14 @@ Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 Route::get('/user-register',[HomeController::class,'userRegister'])->name('user.register');
+
 Route::post('/user-register',[HomeController::class,'saveUser'])->name('user.register');
+
+Route::get('/user-login',[HomeController::class,'userLogin'])->name('user.login');
+
+Route::post('/user-login',[HomeController::class,'loginCheck'])->name('user.login');
+
+Route::get('/user-logout',[HomeController::class,'Logout'])->name('user.logout');
 
 
 

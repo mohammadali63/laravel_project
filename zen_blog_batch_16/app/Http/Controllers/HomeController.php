@@ -6,6 +6,7 @@ use App\Models\blog;
 use App\Models\BlogUser;
 use Illuminate\Http\Request;
 use DB;
+use Session;
 use mysql_xdevapi\Table;
 
 class HomeController extends Controller
@@ -71,5 +72,39 @@ class HomeController extends Controller
     {
         BlogUser::saveUser($request);
         return back();
+    }
+    public function userLogin()
+    {
+        return view('frontEnd.user.user-login');
+    }
+    public function loginCheck(Request $request)
+    {
+        $userInfo=BlogUser::where('email',$request->user_name)
+            ->orWhere('phone',$request->user_name)
+            ->first();
+        if ($userInfo){
+            $exPassword=$userInfo->password;
+            if (password_verify($request->password,$exPassword)){
+                Session::put('userId',$userInfo->id);
+                Session::put('userName',$userInfo->name);
+                return redirect('/');
+            }
+            else{
+                return back()->with('massage','please use valid password');
+            }
+
+        }
+        else{
+            return back()->with('massage','please use valid email or phone number');
+        }
+
+    }
+    public function Logout()
+    {
+        Session::forget('userId');
+        Session::forget('userName');
+        return back();
+
+
     }
 }
