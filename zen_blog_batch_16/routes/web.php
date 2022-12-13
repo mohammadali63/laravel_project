@@ -26,7 +26,7 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/blog-details/{slug}',[HomeController::class,'BlogDetails'])->name('blog.details');
 
-Route::get('/categoriesBlog',[HomeController::class,'categories'])->name('category.blog');
+Route::get('/categoriesBlog/{id}',[HomeController::class,'categories'])->name('category.blog');
 
 Route::get('/about',[HomeController::class,'about'])->name('about');
 
@@ -41,6 +41,8 @@ Route::get('/user-login',[HomeController::class,'userLogin'])->name('user.login'
 Route::post('/user-login',[HomeController::class,'loginCheck'])->name('user.login');
 
 Route::get('/user-logout',[HomeController::class,'Logout'])->name('user.logout');
+
+Route::get('/user-profile',[HomeController::class,'userProfile'])->name('user.profile');
 
 
 

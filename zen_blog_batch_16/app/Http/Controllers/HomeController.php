@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\blog;
 use App\Models\BlogUser;
+use App\Models\category;
 use Illuminate\Http\Request;
 use DB;
 use Session;
@@ -52,9 +53,20 @@ class HomeController extends Controller
         ]);
     }
 
-    public function categories()
+    public function categories($id)
     {
-        return view('frontEnd.category.categories');
+
+        $category = category::where('id',$id)->first();
+        $blogs=DB::table('blogs')
+        ->join('categories','blogs.category_id','categories.id')
+        ->join('authors','blogs.author_id','authors.id')
+        ->select('blogs.*','categories.category','authors.author_name')
+        ->where('blogs.category_id',$id)
+        ->get();
+        return view('frontEnd.category.categories',[
+            'blogs'=>$blogs,
+            'category'=>$category
+        ]);
     }
     public function about()
     {
@@ -106,5 +118,9 @@ class HomeController extends Controller
         return back();
 
 
+    }
+    public function userProfile()
+    {
+        return view('');
     }
 }

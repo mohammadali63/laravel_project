@@ -15,7 +15,7 @@
                 <li class="dropdown"><a href=""><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                         @foreach($categories as $category)
-                        <li><a href="{{route('category.blog')}}">{{$category->category}}</a></li>
+                        <li><a href="{{route('category.blog',['id'=>$category->id])}}">{{$category->category}}</a></li>
                         @endforeach
                     </ul>
                 </li>
