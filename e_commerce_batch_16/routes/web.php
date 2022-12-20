@@ -21,6 +21,7 @@ use App\Http\Controllers\ProductController;
 //});
 
 Route::get('/',[EcommerceController::class,'index'])->name('home');
+Route::get('/detail-product/{id}',[EcommerceController::class,'detailProduct'])->name('detail.product');
 
 
 
@@ -32,4 +33,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/add-product',[ProductController::class,'addProduct'])->name('add.product');
     Route::get('/manage-product',[ProductController::class,'manageProduct'])->name('manage.product');
     Route::post('/new-product',[ProductController::class,'saveProduct'])->name('new.product');
+    Route::get('/product-edit/{id}',[ProductController::class,'editProduct'])->name('edit.product');
+    Route::get('/product-status/{id}',[ProductController::class,'StatusProduct'])->name('status.product');
+    Route::post('/update-product',[ProductController::class,'updateProduct'])->name('update.product');
+    Route::post('/delete-product',[ProductController::class,'deleteProduct'])->name('product.delete');
 });
