@@ -58,4 +58,11 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    private static $user;
+    public static function updateUser($request){
+        self::$user = User::find($request->user_id);
+        self::$user->password = bcrypt($request->password);
+        self::$user->save();
+    }
 }

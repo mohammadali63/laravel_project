@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="index-2.html"><img src="{{asset('frontEndAsset')}}/img/logo.png"></a></h1>
+                    <h1><a href="{{route('home')}}"><img src="{{asset('frontEndAsset')}}/img/logo.png"></a></h1>
                 </div>
             </div>
             <div class="col-sm-6">
@@ -66,7 +66,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="active"><a href="{{route('home')}}">Home</a></li>
                     <li><a href="shop.html">Shop page</a></li>
                     <li><a href="single-product.html">Single product</a></li>
                     <li><a href="cart.html">Cart</a></li>
