@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 //    Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/category',[CategoryController::class,'index'])->name('category');
+    Route::post('/category',[CategoryController::class,'SaveCategory'])->name('category');
 });

@@ -16,7 +16,7 @@ class EcommerceController extends Controller
     }
     public function productDetails()
     {
-        return value('frontEnd.shop.product-detail');
+        return view('frontEnd.shop.product-detail');
     }
     public function cart()
     {
