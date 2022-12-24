@@ -65,8 +65,18 @@
                                         <img src="{{asset($category->image)}}" alt="" class="h-100 w-50">
                                     </td>
                                     <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>
-                                    <td><a href="" class="btn btn-outline-success">Edit</a></td>
-                                    <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                                    <td><a href="{{route('edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
+                                    @if($category->status == 1)
+                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>
+                                    @else
+                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-success">Active</a>
+                                    @endif
+                                        <form action="{{route('delete')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" value="{{$category->id}}" name="cat_id"/>
+                                            <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 </tbody>
                                 @endforeach

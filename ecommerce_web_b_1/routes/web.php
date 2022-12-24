@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/category',[CategoryController::class,'index'])->name('category');
     Route::post('/category',[CategoryController::class,'SaveCategory'])->name('category');
+    Route::get('/status/{id}',[CategoryController::class,'status'])->name('status');
+    Route::post('/delete',[CategoryController::class,'categoryDelete'])->name('delete');
+    Route::get('/edit/{id}',[CategoryController::class,'editCategory'])->name('edit');
+    Route::post('/update-category',[CategoryController::class,'updateCategory'])->name('update.category');
+
+    Route::get('/sub-category',[SubcategoryController::class,'index'])->name('subcategory');
 });
