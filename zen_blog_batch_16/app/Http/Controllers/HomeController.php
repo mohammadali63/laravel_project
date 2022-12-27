@@ -45,10 +45,18 @@ class HomeController extends Controller
             ->where('blogs.category_id',$catId)
             ->get();
 
+        $comments =DB::table('comments')
+            ->join('blog_users','comments.user_id','blog_users.id')
+            ->select('comments.*','blog_users.name')
+            ->where('comments.blog_id',$blog->id)
+            ->get();
+
 
         return view('frontEnd.blog.blog-details',[
             'blog'=>$blog,
-            'categoryWiseBlog'=>$categoryWiseBlog
+            'categoryWiseBlog'=>$categoryWiseBlog,
+            'comments'=>$comments,
+
 
         ]);
     }
@@ -63,6 +71,7 @@ class HomeController extends Controller
         ->select('blogs.*','categories.category','authors.author_name')
         ->where('blogs.category_id',$id)
         ->get();
+
         return view('frontEnd.category.categories',[
             'blogs'=>$blogs,
             'category'=>$category
@@ -119,8 +128,36 @@ class HomeController extends Controller
 
 
     }
-    public function userProfile()
+    public function userProfile($id)
     {
-        return view('');
+        if ($id==Session::get('userId'))
+        {
+            return view('frontEnd.user.user-profile',[
+                'user' => BlogUser::find($id)
+            ]);
+        }
+        else
+        {
+            return redirect('/');
+        }
+
+    }
+
+    public function updateUser(Request $request)
+    {
+        $user=BlogUser::find($request->user_id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        if (password_verify($request->oldPass,$user->password))
+        {
+            $user->password =bcrypt($request->newPass);
+        }
+        else
+        {
+            return back()->with('massage',('Your Old Password Incorrect'));
+        }
+        $user->save();
+        return redirect('/');
     }
 }

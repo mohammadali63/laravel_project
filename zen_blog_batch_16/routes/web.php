@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\ComentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +22,9 @@ use App\Http\Controllers\BlogController;
 Route::get('/', function () {return view('welcome');
 });
 
-Route::get('/',[HomeController::class,'index'])->name('home');
 
-Route::get('/blog-details/{slug}',[HomeController::class,'BlogDetails'])->name('blog.details');
+
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/categoriesBlog/{id}',[HomeController::class,'categories'])->name('category.blog');
 
@@ -42,12 +42,28 @@ Route::post('/user-login',[HomeController::class,'loginCheck'])->name('user.logi
 
 Route::get('/user-logout',[HomeController::class,'Logout'])->name('user.logout');
 
-Route::get('/user-profile',[HomeController::class,'userProfile'])->name('user.profile');
+
+Route::post('/new-comment',[ComentController::class,'saveComment'])->name('new.commernt');
+
+
+
+Route::get('/user-profile/{id}',[HomeController::class,'userProfile'])->name('user.profile');
+
+Route::post('/update-user',[HomeController::class,'updateUser'])->name('update.user');
 
 
 
 
 
+
+////Route::middleware(['blogUser'])->group(function () {
+//
+//
+//});
+Route::group(['middleware'=>'blogUser'],function (){
+    Route::get('/blog-details/{slug}',[HomeController::class,'BlogDetails'])->name('blog.details');
+
+});
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardConteroller::class,'index'])->name('dashboard');

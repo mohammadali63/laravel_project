@@ -27,7 +27,7 @@
 
         <div class="position-relative">
             @if(Session::get('userId'))
-                <a href="" class="mx-2 btn btn-outline-primary">{{Session::get('userName')}}</a>
+                <a href="{{route('user.profile',['id'=>Session::get('userId')])}}" class="mx-2 btn btn-outline-primary">{{Session::get('userName')}}</a>
                 <a href="{{route('user.logout')}}" class="mx-2 btn btn-outline-primary">logout</a>
             @else
                 <a href="{{route('user.register')}}" class="mx-2 btn btn-outline-primary">Registraition</a>

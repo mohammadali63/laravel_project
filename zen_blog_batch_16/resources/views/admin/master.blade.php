@@ -29,7 +29,7 @@
     <link href="{{asset('adminAsset')}}/assets/css/semi-dark.css" rel="stylesheet" />
     <link href="{{asset('adminAsset')}}/assets/css/header-colors.css" rel="stylesheet" />
 
-    <title>Skodash - Bootstrap 5 Admin Template</title>
+    <title>MD.Ali DAshboard</title>
 </head>
 
 <body>
@@ -84,6 +84,48 @@
     new PerfectScrollbar(".best-product")
     new PerfectScrollbar(".top-sellers-list")
 </script>
+
+
+<script>
+    function checkCategoryName(){
+        var category =$('#categoryName').val();
+        var regex=/^[a-z,A-Z, ]{3,15}$/;
+        if (regex.test(category)){
+            $('#errorMessage').html('');
+            return true;
+        }else {
+            $('#errorMessage').html('you can use 3 to 15 characters')
+            return false;
+        }
+    }
+    $('#categoryName').keyup(function (){
+        var res =checkCategoryName();
+        if (checkCategoryName() == true){
+            $('#catBtn').prop('disabled',false)
+            return true;
+        }else {
+            $('#catBtn').prop('disabled',true)
+            return false;
+        }
+    });
+
+    $('#catForm').submit(function (){
+        checkCategoryName();
+        if (checkCategoryName() == true){
+            return true;
+        }else {
+            return false;
+        }
+
+    });
+</script>
+
+
+{{--<script>--}}
+{{--    $('#catForm').submit(function (){--}}
+{{--        alert('ok');--}}
+{{--    });--}}
+{{--</script>--}}
 
 
 </body>

@@ -10,6 +10,9 @@ class category extends Model
     use HasFactory;
     private static $category;
     public static function saveCategory($request){
+        $request->validate([
+            'category' =>'required|string|min:3|max:20',
+        ]);
         self::$category=new category();
         self::$category->category = $request->category;
         self::$category->save();
