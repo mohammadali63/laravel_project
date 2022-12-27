@@ -10,7 +10,7 @@
 
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
-                    <h1 class="page-title">User Registraition</h1>
+                    <h1 class="page-title">User Login</h1>
                 </div>
             </div>
 

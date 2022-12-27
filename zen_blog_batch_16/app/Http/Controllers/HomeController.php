@@ -160,4 +160,13 @@ class HomeController extends Controller
         $user->save();
         return redirect('/');
     }
+    public function apiBlogDetails($id){
+        $blog=DB::table('blogs')
+            ->join('categories','blogs.category_id','categories.id')
+            ->join('authors','blogs.author_id','authors.id')
+            ->select('blogs.*','categories.category','authors.author_name')
+            ->where('blogs.id',$id)
+            ->first();
+        return json_encode($blog);
+    }
 }

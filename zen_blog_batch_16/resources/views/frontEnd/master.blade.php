@@ -61,8 +61,56 @@
 <script src="{{asset('frontEndasset')}}/assets/vendor/aos/aos.js"></script>
 <script src="{{asset('frontEndasset')}}/assets/vendor/php-email-form/validate.js"></script>
 
+<script src="{{asset('adminAsset')}}/assets/js/jquery.min.js"></script>
+
 <!-- Template Main JS File -->
 <script src="{{asset('frontEndasset')}}/assets/js/main.js"></script>
+<script>
+    $('.details').click(function (){
+        blogId=$(this).attr('id')
+        $.ajax({
+            method:"GET",
+            url:'api/blog-details/'+blogId,
+            dataType:'JSON',
+            success:function (data){
+                $('#title').text(data.title);
+                $('#image').attr('src',data.image);
+                $('#description').text(data.description.substr(0,100));
+            }
+        })
+
+        $('#detailsModal').modal('show');
+    })
+</script>
+
+{{--data-bs-toggle="modal" data-bs-target="#exampleModal"--}}
+{{--// alert(data.id)--}}
+{{--$('#title').text(data.title);--}}
+{{--$('#description').text(data.description.substr(0,15));--}}
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 id="title"></h3>
+                <img src="" id="image" alt="" class="img-fluid">
+                <p id="description"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 
