@@ -22,7 +22,6 @@
                                             <select class="form-control" name="category_id">
                                                 <option value="">Select Category</option>
                                                 @foreach($categories as $category)
-
                                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
                                                 @endforeach
                                             </select>
@@ -55,7 +54,7 @@
                                 <tr>
                                     <th>sl</th>
                                     <th>Category Name</th>
-                                    <th>Image</th>
+                                    <th>Sub_CAtegory_Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -67,19 +66,20 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$category->category_name}}</td>
                                         <td>{{$category->sub_category_name}}</td>
-{{--                                        <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>--}}
-{{--                                        <td><a href="{{route('sub-edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>--}}
-{{--                                            @if($category->status == 1)--}}
-{{--                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>--}}
-{{--                                            @else--}}
-{{--                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Active</a>--}}
-{{--                                            @endif--}}
-{{--                                            <form action="{{route('subCategory-delete')}}" method="post">--}}
-{{--                                                @csrf--}}
-{{--                                                <input type="hidden" value="{{$category->id}}" name="cat_id"/>--}}
-{{--                                                <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>--}}
-{{--                                            </form>--}}
-{{--                                        </td>--}}
+                                        <td>{{$category->ststus == 1 ? 'Active' : 'inActive'}}</td>
+                                        <td>
+{{--                                            <a href="{{route('sub-edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>--}}
+                                            @if($category->ststus == 1)
+                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>
+                                            @else
+                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Active</a>
+                                            @endif
+                                            <form action="{{route('sub-delete')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" value="{{$category->id}}" name="cat_id"/>
+                                                <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                     </tbody>
                                 @endforeach

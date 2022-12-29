@@ -22,6 +22,16 @@ class SubcategoryController extends Controller
     public function saveSubCategory(Request $request)
     {
         Subcategory::saveSubCategory($request);
-        return back()->with('massage','Subcategory Save');
+        return back()->with('massage','New Subcategory Save');
+    }
+    public function saveSubStatus($id)
+    {
+        Subcategory::status($id);
+        return back()->with('massage','status info update');
+    }
+    public function SubDelete(Request $request)
+    {
+        Subcategory::categoryDelete($request);
+        return back()->with('massage','info delete successful');
     }
 }

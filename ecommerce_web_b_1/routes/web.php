@@ -40,4 +40,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/sub-category',[SubcategoryController::class,'index'])->name('sub.category');
     Route::post('/sub-category',[SubcategoryController::class,'saveSubCategory'])->name('sub.category');
+    Route::get('/sub-status/{id}',[SubcategoryController::class,'saveSubStatus'])->name('sub-status');
+    Route::post('/sub-delete',[SubcategoryController::class,'SubDelete'])->name('sub-delete');
 });
