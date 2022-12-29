@@ -17,7 +17,10 @@ class Category extends Model
             self::$category =new Category();
         }
         self::$category->category_name = $request->category_name;
-        if ($request->file('image')){
+        if ($request->image){
+            if (file_exists(self::$category->image)){
+                unlink(self::$category->image);
+            }
             self::$category->image = self::getImageUrl($request);
         }
 

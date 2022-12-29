@@ -67,9 +67,9 @@
                                     <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>
                                     <td><a href="{{route('edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
                                     @if($category->status == 1)
-                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>
+                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-secondary">Inactive</a>
                                     @else
-                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-success">Active</a>
+                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-warning">Active</a>
                                     @endif
                                         <form action="{{route('delete')}}" method="post">
                                             @csrf
