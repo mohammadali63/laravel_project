@@ -48,9 +48,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 
     Route::get('/barand',[BrandController::class,'index'])->name('barand');
-//    Route::post('/category',[CategoryController::class,'SaveCategory'])->name('category');
-//    Route::get('/status/{id}',[CategoryController::class,'status'])->name('status');
-//    Route::post('/delete',[CategoryController::class,'categoryDelete'])->name('delete');
-//    Route::get('/edit/{id}',[CategoryController::class,'editCategory'])->name('edit');
-//    Route::post('/update-category',[CategoryController::class,'updateCategory'])->name('update.category');
+    Route::post('/brand',[BrandController::class,'Savebrand'])->name('brand');
+    Route::get('/status/{id}',[BrandController::class,'status'])->name('status');
+    Route::post('/delete',[BrandController::class,'brandDelete'])->name('delete');
+    Route::get('/edit/{id}',[BrandController::class,'editBrand'])->name('edit');
+    Route::post('/update-brand',[BrandController::class,'updateBrand'])->name('update.brand');
 });

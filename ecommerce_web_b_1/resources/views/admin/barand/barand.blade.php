@@ -14,7 +14,7 @@
                             <p class="text-danger">{{@session('massage')}}</p>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{route('brand')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-md-6">
@@ -55,31 +55,31 @@
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-{{--                                @php $i=1 @endphp--}}
-{{--                                @foreach($categories as $category)--}}
-{{--                                    <tbody>--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{$i++}}</td>--}}
-{{--                                        <td>{{$category->category_name}}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <img src="{{asset($category->image)}}" alt="" class="h-100 w-50">--}}
-{{--                                        </td>--}}
-{{--                                        <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>--}}
-{{--                                        <td><a href="{{route('edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>--}}
-{{--                                            @if($category->status == 1)--}}
-{{--                                                <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-secondary">Inactive</a>--}}
-{{--                                            @else--}}
-{{--                                                <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-warning">Active</a>--}}
-{{--                                            @endif--}}
-{{--                                            <form action="{{route('delete')}}" method="post">--}}
-{{--                                                @csrf--}}
-{{--                                                <input type="hidden" value="{{$category->id}}" name="cat_id"/>--}}
-{{--                                                <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>--}}
-{{--                                            </form>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                    </tbody>--}}
-{{--                                @endforeach--}}
+                                @php $i=1 @endphp
+                                @foreach($barands as $brand)
+                                    <tbody>
+                                    <tr>
+                                        <td>{{$i++}}</td>
+                                        <td>{{$brand->barand_name}}</td>
+                                        <td>
+                                            <img src="{{asset($brand->image)}}" alt="" class="h-100 w-50">
+                                        </td>
+                                        <td>{{$brand->status == 1 ? 'Active' : 'inActive'}}</td>
+                                        <td><a href="{{route('edit',['id'=>$brand->id])}}" class="btn btn-outline-success">Edit</a>
+                                            @if($brand->status == 1)
+                                                <a href="{{route('status',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>
+                                            @else
+                                                <a href="{{route('status',['id'=>$brand->id])}}" class="btn btn-outline-warning">Active</a>
+                                            @endif
+                                            <form action="{{route('delete')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" value="{{$brand->id}}" name="brand_id"/>
+                                                <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
                             </table>
                         </div>
                     </div>
