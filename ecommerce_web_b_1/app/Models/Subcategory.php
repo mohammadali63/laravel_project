@@ -11,8 +11,8 @@ class Subcategory extends Model
     private static $subcategory,$massage;
     public static function saveSubCategory($request)
     {
-        if ($request->cat_id){
-            self::$subcategory = Subcategory::find($request->cat_id);
+        if ($request->subcat_id){
+            self::$subcategory = Subcategory::find($request->subcat_id);
         }else{
             self::$subcategory =new Subcategory();
         }

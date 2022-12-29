@@ -34,4 +34,16 @@ class SubcategoryController extends Controller
         Subcategory::categoryDelete($request);
         return back()->with('massage','info delete successful');
     }
+    public function subEdit($id)
+    {
+        return view('admin.category.subcategory-edit',[
+            'subcategories'=>Subcategory::find($id),
+            'categories' => Category::all()
+        ]);
+    }
+    public function updateSubCategory(Request $request)
+    {
+        Subcategory::saveSubCategory($request);
+        return redirect(route('sub.category'));
+    }
 }

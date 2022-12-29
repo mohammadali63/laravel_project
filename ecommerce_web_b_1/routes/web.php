@@ -5,6 +5,7 @@ use App\Http\Controllers\EcommerceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,14 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/sub-category',[SubcategoryController::class,'saveSubCategory'])->name('sub.category');
     Route::get('/sub-status/{id}',[SubcategoryController::class,'saveSubStatus'])->name('sub-status');
     Route::post('/sub-delete',[SubcategoryController::class,'SubDelete'])->name('sub-delete');
+    Route::get('/sub-edit,{id}',[SubcategoryController::class,'subEdit'])->name('sub-edit');
+    Route::post('/update-subcategory',[SubcategoryController::class,'updateSubCategory'])->name('update.subcategory');
+
+
+    Route::get('/barand',[BrandController::class,'index'])->name('barand');
+//    Route::post('/category',[CategoryController::class,'SaveCategory'])->name('category');
+//    Route::get('/status/{id}',[CategoryController::class,'status'])->name('status');
+//    Route::post('/delete',[CategoryController::class,'categoryDelete'])->name('delete');
+//    Route::get('/edit/{id}',[CategoryController::class,'editCategory'])->name('edit');
+//    Route::post('/update-category',[CategoryController::class,'updateCategory'])->name('update.category');
 });

@@ -68,7 +68,7 @@
                                         <td>{{$category->sub_category_name}}</td>
                                         <td>{{$category->ststus == 1 ? 'Active' : 'inActive'}}</td>
                                         <td>
-{{--                                            <a href="{{route('sub-edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>--}}
+                                            <a href="{{route('sub-edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
                                             @if($category->ststus == 1)
                                                 <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>
                                             @else
