@@ -17,7 +17,7 @@
                         <a class="nav-link" href="{{route('category')}}">Category</a>
                         <a class="nav-link" href="{{route('sub.category')}}">Sub Category</a>
                         <a class="nav-link" href="{{route('barand')}}">Brand</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Color</a>
+                        <a class="nav-link" href="{{route('color')}}">Color</a>
                         <a class="nav-link" href="{{route('size')}}">Size</a>
                     </nav>
                 </div>
