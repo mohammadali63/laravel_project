@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\SizeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +54,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/delete',[BrandController::class,'brandDelete'])->name('delete');
     Route::get('/edit/{id}',[BrandController::class,'editBrand'])->name('edit');
     Route::post('/update-brand',[BrandController::class,'updateBrand'])->name('update.brand');
+
+    Route::get('/size',[SizeController::class,'index'])->name('size');
+    Route::post('/size-save',[SizeController::class,'saveSize'])->name('save.size');
+    Route::get('/status/{id}',[SizeController::class,'status'])->name('status');
+    Route::post('/delete',[SizeController::class,'sizeDelete'])->name('delete');
+    Route::get('/edit/{id}',[SizeController::class,'editSize'])->name('edit');
+    Route::post('/update-Size',[SizeController::class,'updateSize'])->name('update.size');
 });
