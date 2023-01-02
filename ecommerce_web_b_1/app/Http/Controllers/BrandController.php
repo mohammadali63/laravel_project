@@ -19,16 +19,18 @@ class BrandController extends Controller
         Brand::Savebrand($request);
         return back()->with('massage','Info Save Successfully');
     }
-    public function status($id)
+
+    public function brandStatus($id)
     {
-        Brand::status($id);
+        Brand::brandStatus($id);
         return back()->with('massage','status info update');
+
     }
-    public function brandDelete(Request $request)
+
+    public function deleteBrand(Request $request)
     {
         Brand::brandDelete($request);
         return back()->with('massage','info delete successful');
-
     }
     public function editBrand($id)
     {

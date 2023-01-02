@@ -8,6 +8,7 @@ use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/category',[CategoryController::class,'index'])->name('category');
     Route::post('/category',[CategoryController::class,'SaveCategory'])->name('category');
-    Route::get('/status/{id}',[CategoryController::class,'status'])->name('status');
-    Route::post('/delete',[CategoryController::class,'categoryDelete'])->name('delete');
-    Route::get('/edit/{id}',[CategoryController::class,'editCategory'])->name('edit');
+    Route::get('/cat-status/{id}',[CategoryController::class,'catStatus'])->name('cat.status');
+//    Route::post('/delete',[CategoryController::class,'categoryDelete'])->name('cat.delete');
+    Route::post('/category-delete',[CategoryController::class,'categoryDelete'])->name('cat.delete');
+    Route::get('/category-edit/{id}',[CategoryController::class,'categoryEdit'])->name('category.edit');
     Route::post('/update-category',[CategoryController::class,'updateCategory'])->name('update.category');
 
     Route::get('/sub-category',[SubcategoryController::class,'index'])->name('sub.category');
@@ -51,9 +53,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/barand',[BrandController::class,'index'])->name('barand');
     Route::post('/brand',[BrandController::class,'Savebrand'])->name('brand');
-    Route::get('/status/{id}',[BrandController::class,'status'])->name('status');
-    Route::post('/delete',[BrandController::class,'brandDelete'])->name('delete');
-    Route::get('/edit/{id}',[BrandController::class,'editBrand'])->name('edit');
+    Route::get('/status-brand/{id}',[BrandController::class,'brandStatus'])->name('brand.status');
+    Route::post('delete-brand',[BrandController::class,'deleteBrand'])->name('brand.delete');
+    Route::get('/edit-brand/{id}',[BrandController::class,'editBrand'])->name('edit.brand');
     Route::post('/update-brand',[BrandController::class,'updateBrand'])->name('update.brand');
 
 
@@ -65,6 +67,17 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/size-save',[SizeController::class,'saveSize'])->name('save.size');
     Route::get('/status/{id}',[SizeController::class,'status'])->name('status');
     Route::post('/delete',[SizeController::class,'sizeDelete'])->name('delete');
-    Route::get('/edit/{id}',[SizeController::class,'editSize'])->name('edit');
+    Route::get('/edit/{id}',[SizeController::class,'editSize'])->name('size.edit');
     Route::post('/update-Size',[SizeController::class,'updateSize'])->name('update.size');
+
+    Route::get('/product/add',[ProductController::class,'index'])->name('product.add');
+    Route::post('/product/create',[ProductController::class,'crate'])->name('product.create');
+    Route::get('/product/manage',[ProductController::class,'manage'])->name('product.manage');
+    Route::get('/product/edit/{id}',[ProductController::class,'editProduct'])->name('product.edit');
+    Route::post('/product/update',[ProductController::class,'updateProduct'])->name('product.update');
+    Route::post('delete-product',[ProductController::class,'productDelete'])->name('product.delete');
+//    Route::get('/status-brand/{id}',[ProductController::class,'manage'])->name('product.status');
+
+
+
 });

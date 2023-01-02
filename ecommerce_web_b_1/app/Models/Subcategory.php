@@ -23,11 +23,11 @@ class Subcategory extends Model
     }
     public static function status($id){
         self::$subcategory = Subcategory::find($id);
-        if (self::$subcategory->ststus == 1){
-            self::$subcategory->ststus =0;
+        if (self::$subcategory->status == 1){
+            self::$subcategory->status =0;
         }
         else{
-            self::$subcategory->ststus =1;
+            self::$subcategory->status =1;
         }
         self::$subcategory->save();
     }

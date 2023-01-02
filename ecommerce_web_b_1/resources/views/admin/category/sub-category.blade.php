@@ -66,13 +66,13 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$category->category_name}}</td>
                                         <td>{{$category->sub_category_name}}</td>
-                                        <td>{{$category->ststus == 1 ? 'Active' : 'inActive'}}</td>
+                                        <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>
                                         <td>
                                             <a href="{{route('sub-edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
-                                            @if($category->ststus == 1)
+                                            @if($category->status == 1)
                                                 <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Inactive</a>
                                             @else
-                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-success">Active</a>
+                                                <a href="{{route('sub-status',['id'=>$category->id])}}" class="btn btn-outline-warning">Active</a>
                                             @endif
                                             <form action="{{route('sub-delete')}}" method="post">
                                                 @csrf

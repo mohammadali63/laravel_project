@@ -65,15 +65,15 @@
                                         <img src="{{asset($category->image)}}" alt="" class="h-100 w-50">
                                     </td>
                                     <td>{{$category->status == 1 ? 'Active' : 'inActive'}}</td>
-                                    <td><a href="{{route('edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
+                                    <td><a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-outline-success">Edit</a>
                                     @if($category->status == 1)
-                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-secondary">Inactive</a>
+                                    <a href="{{route('cat.status',['id'=>$category->id])}}" class="btn btn-outline-secondary">Inactive</a>
                                     @else
-                                    <a href="{{route('status',['id'=>$category->id])}}" class="btn btn-outline-warning">Active</a>
+                                    <a href="{{route('cat.status',['id'=>$category->id])}}" class="btn btn-outline-warning">Active</a>
                                     @endif
-                                        <form action="{{route('delete')}}" method="post">
+                                        <form action="{{route('cat.delete')}}" method="post">
                                             @csrf
-                                            <input type="hidden" value="{{$category->id}}" name="cat_id"/>
+                                            <input type="hidden" value="{{$category->id}}" name="cat_delete"/>
                                             <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>
                                         </form>
                                     </td>

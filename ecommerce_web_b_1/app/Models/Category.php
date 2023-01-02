@@ -47,7 +47,7 @@ class Category extends Model
     }
 
     public static function categoryDelete($request){
-        self::$category=Category::find($request->brand_id);
+        self::$category=Category::find($request->cat_delete);
         if (self::$category->image){
             if (file_exists(self::$category->image)){
                 unlink(self::$category->image);

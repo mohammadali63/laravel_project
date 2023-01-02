@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     use HasFactory;
-    private static $category,$image,$imageNewName,$directory,$imgUrl;
+    private static $brand,$image,$imageNewName,$directory,$imgUrl;
 
     public static function Savebrand($request){
         if ($request->brand_id){
-            self::$category = Brand::find($request->brand_id);
+            self::$brand = Brand::find($request->brand_id);
         }else{
-            self::$category =new Brand();
+            self::$brand =new Brand();
         }
-        self::$category->barand_name = $request->barand_name;
+        self::$brand->barand_name = $request->barand_name;
         if ($request->image){
-            if (file_exists(self::$category->image)){
-                unlink(self::$category->image);
+            if (file_exists(self::$brand->image)){
+                unlink(self::$brand->image);
             }
-            self::$category->image = self::getImageUrl($request);
+            self::$brand->image = self::getImageUrl($request);
         }
 
-        self::$category->save();
+        self::$brand->save();
     }
     public static function getImageUrl($request)
     {
@@ -35,24 +35,24 @@ class Brand extends Model
         self::$image->move(self::$directory,self::$imageNewName);
         return self::$imgUrl;
     }
-    public static function status($id){
-        self::$category = Brand::find($id);
-        if (self::$category->status == 1){
-            self::$category->status =0;
+    public static function brandStatus($id){
+        self::$brand = Brand::find($id);
+        if (self::$brand->status == 1){
+            self::$brand->status =0;
         }
         else{
-            self::$category->status =1;
+            self::$brand->status =1;
         }
-        self::$category->save();
+        self::$brand->save();
     }
 
     public static function brandDelete($request){
-        self::$category=Brand::find($request->brand_id);
-        if (self::$category->image){
-            if (file_exists(self::$category->image)){
-                unlink(self::$category->image);
+        self::$brand=Brand::find($request->brand_id);
+        if (self::$brand->image){
+            if (file_exists(self::$brand->image)){
+                unlink(self::$brand->image);
             }
         }
-        self::$category->delete();
+        self::$brand->delete();
     }
 }

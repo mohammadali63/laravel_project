@@ -19,24 +19,26 @@ class CategoryController extends Controller
         Category::saveCategory($request);
         return back()->with('massage','Info Save Successfully');
     }
-    public function status($id)
+    public function catStatus($id)
     {
         Category::status($id);
         return back()->with('massage','status info update');
     }
+
     public function categoryDelete(Request $request)
     {
         Category::categoryDelete($request);
         return back()->with('massage','info delete successful');
 
     }
-    public function editCategory($id)
-    {
 
-       return view('admin.category.edit-category',[
-           'categories'=>Category::find($id)
-       ]);
+    public function categoryEdit($id)
+    {
+        return view('admin.category.edit-category',[
+            'categories'=>Category::find($id),
+            ]);
     }
+
     public function updateCategory(Request $request)
     {
         Category::saveCategory($request);

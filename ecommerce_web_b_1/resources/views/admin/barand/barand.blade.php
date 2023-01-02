@@ -65,13 +65,13 @@
                                             <img src="{{asset($brand->image)}}" alt="" class="h-100 w-50">
                                         </td>
                                         <td>{{$brand->status == 1 ? 'Active' : 'inActive'}}</td>
-                                        <td><a href="{{route('edit',['id'=>$brand->id])}}" class="btn btn-outline-success">Edit</a>
+                                        <td><a href="{{route('edit.brand',['id'=>$brand->id])}}" class="btn btn-outline-success">Edit</a>
                                             @if($brand->status == 1)
-                                                <a href="{{route('status',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>
+                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>
                                             @else
-                                                <a href="{{route('status',['id'=>$brand->id])}}" class="btn btn-outline-warning">Active</a>
+                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-warning">Active</a>
                                             @endif
-                                            <form action="{{route('delete')}}" method="post">
+                                            <form action="{{route('brand.delete')}}" method="post">
                                                 @csrf
                                                 <input type="hidden" value="{{$brand->id}}" name="brand_id"/>
                                                 <button class="btn btn-outline-danger" onclick="return confirm('are you sure delete This')" type="submit">Delete</button>

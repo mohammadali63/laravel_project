@@ -57,7 +57,7 @@
                                         <td>{{$size->size_name}}</td>
                                         <td>{{$size->status == 1 ? 'Active' : 'inActive'}}</td>
                                         <td>
-                                            <a href="{{route('edit',['id'=>$size->id])}}" class="btn btn-outline-success">Edit</a>
+                                            <a href="{{route('size.edit',['id'=>$size->id])}}" class="btn btn-outline-success">Edit</a>
                                             @if($size->status == 1)
                                                 <a href="{{route('status',['id'=>$size->id])}}" class="btn btn-outline-secondary">Inactive</a>
                                             @else

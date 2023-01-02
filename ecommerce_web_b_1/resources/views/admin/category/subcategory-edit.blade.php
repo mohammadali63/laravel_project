@@ -22,7 +22,7 @@
                                             <select class="form-control" name="category_id">
                                                 <option value="">Select Category</option>
                                                 @foreach($categories as $category)
-                                                    <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                                    <option value="{{$category->id}}" {{$category->id == $subcategories->category_id ? 'selected' : ''}}>{{$category->category_name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -47,8 +47,8 @@
 
     </main>
 
-    <script >
-        document.forms['editForm'].elements['category_id'].value ={{$subcategories->category_id}};
-    </script>
+{{--    <script >--}}
+{{--        document.forms['editForm'].elements['category_id'].value ={{$subcategories->category_id}};--}}
+{{--    </script>--}}
 @endsection
 
