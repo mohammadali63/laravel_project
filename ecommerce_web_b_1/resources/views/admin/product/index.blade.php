@@ -13,7 +13,9 @@
                             Add Product Form
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <p class="text-center text-success py-3">{{session('massage')}}</p>
+
+                            <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-3">
                                     <label class="col-md-3">Category Name</label>
@@ -72,7 +74,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3">long Description</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control summernote" name="long_description" placeholder="Enter your Long Description"/>
+                                        <input type="text" class="form-control " name="long_description" placeholder="long_description.....">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -97,7 +99,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3">Product Other Image</label>
                                     <div class="col-md-9">
-                                        <input type="file" class="form-control " multiple name="other_image"/>
+                                        <input type="file" class="form-control " multiple name="other_image[]"/>
                                     </div>
                                 </div>
 
@@ -107,7 +109,6 @@
                                         <input type="submit" class="btn btn-success px-5" value="Create New Product" />
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>

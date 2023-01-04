@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\OtherImage;
+use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
+
 {
+    private $product;
     public function index()
     {
         return view('admin.product.index',[
@@ -17,9 +21,11 @@ class ProductController extends Controller
             'barnds'=> Brand::where('status',1)->get(),
         ]);
     }
-    public function create(Request $request)
+    public function createProduct(Request $request)
     {
-        return $request->all();
+        $this->product = Product::newProduct($request);
+        OtherImage::newOtherImage($request,$this->product->id);
+        return back()->with('massage','save product');
     }
     public function manage()
     {
