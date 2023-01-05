@@ -10,10 +10,12 @@
                 <div class="col-md-12">
                     <div class="card m-3">
                         <div class="card-header">
+                            <h1 class="text-center text-warning">
                             Add Product Form
+                            </h1>
                         </div>
                         <div class="card-body">
-                            <p class="text-center text-success py-3">{{session('massage')}}</p>
+                            <p class="text-center text-warning py-3">{{session('massage')}}</p>
 
                             <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -74,7 +76,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3">long Description</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control " name="long_description" placeholder="long_description.....">
+                                        <input type="text" class="form-control"  name="long_description" placeholder="long_description.....">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -106,7 +108,7 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3"></label>
                                     <div class="col-md-9">
-                                        <input type="submit" class="btn btn-success px-5" value="Create New Product" />
+                                        <input type="submit" class="btn btn-outline-warning px-5" value="Create New Product" />
                                     </div>
                                 </div>
                             </form>

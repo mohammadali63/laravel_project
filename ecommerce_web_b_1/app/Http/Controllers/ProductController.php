@@ -29,15 +29,39 @@ class ProductController extends Controller
     }
     public function manage()
     {
-        return view('admin.product.manage');
+        return view('admin.product.manage',[
+            'products' => Product::all()
+        ]);
     }
-    public function edit($id)
+    public function detail($id)
     {
-        return view('admin.product.edit');
+        return view('admin.product.detail',['product'=>Product::find($id)]);
     }
-    public function update(Request $request,$id)
+    public function editProduct($id)
     {
-        return view('admin.product.manage');
+        return view('admin.product.edit',[
+            'product'=>Product::find($id),
+            'categories'=>Category::all(),
+            'subcategories'=>Subcategory::all(),
+            'brands'=>Brand::all(),
+        ]);
+    }
+    public function updateProduct(Request $request,$id)
+    {
+        Product::updateProductInfo($request,$id);
+        if ($request->file('other_image'))
+        {
+            OtherImage::updateOtherImage($request,$id);
+        }
+        return redirect('/product/manage')->with('massage','Product Info Update Successfully');
+    }
+    public function productDelete($id)
+    {
+        Product::deleteProduct($id);
+        OtherImage::deleteOtherImage($id);
+        return redirect(route('product.manage'));
     }
 
 }
+
+

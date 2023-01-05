@@ -66,10 +66,15 @@
                                         </td>
                                         <td>{{$brand->status == 1 ? 'Active' : 'inActive'}}</td>
                                         <td><a href="{{route('edit.brand',['id'=>$brand->id])}}" class="btn btn-outline-success">Edit</a>
+{{--                                            @if($brand->status == 1)--}}
+{{--                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>--}}
+{{--                                            @else--}}
+{{--                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-warning">Active</a>--}}
+{{--                                            @endif--}}
                                             @if($brand->status == 1)
-                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>
+                                                <a href="{{route('status.brand',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Inactive</a>
                                             @else
-                                                <a href="{{route('brand.status',['id'=>$brand->id])}}" class="btn btn-outline-warning">Active</a>
+                                                <a href="{{route('status.brand',['id'=>$brand->id])}}" class="btn btn-outline-secondary">Active</a>
                                             @endif
                                             <form action="{{route('brand.delete')}}" method="post">
                                                 @csrf

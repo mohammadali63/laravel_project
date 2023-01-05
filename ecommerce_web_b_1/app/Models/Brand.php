@@ -35,16 +35,29 @@ class Brand extends Model
         self::$image->move(self::$directory,self::$imageNewName);
         return self::$imgUrl;
     }
-    public static function brandStatus($id){
+    public static function BrandStatus($id)
+    {
         self::$brand = Brand::find($id);
-        if (self::$brand->status == 1){
+        if (self::$brand->status == 1)
+        {
             self::$brand->status =0;
         }
-        else{
+        else
+        {
             self::$brand->status =1;
         }
         self::$brand->save();
     }
+//    public static function brandStatus($id){
+//        self::$brand = Brand::find($id);
+//        if (self::$brand->status == 1){
+//            self::$brand->status =0;
+//        }
+//        else{
+//            self::$brand->status =1;
+//        }
+//        self::$brand->save();
+//    }
 
     public static function brandDelete($request){
         self::$brand=Brand::find($request->brand_id);

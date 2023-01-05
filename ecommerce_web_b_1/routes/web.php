@@ -53,7 +53,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/barand',[BrandController::class,'index'])->name('barand');
     Route::post('/brand',[BrandController::class,'Savebrand'])->name('brand');
-    Route::get('/status-brand/{id}',[BrandController::class,'brandStatus'])->name('brand.status');
+//    Route::get('/status-brand/{id}',[BrandController::class,'brandStatus'])->name('brand.status');
+    Route::get('status/brand/{id}',[BrandController::class,'brandStatus'])->name('status.brand');
     Route::post('delete-brand',[BrandController::class,'deleteBrand'])->name('brand.delete');
     Route::get('/edit-brand/{id}',[BrandController::class,'editBrand'])->name('edit.brand');
     Route::post('/update-brand',[BrandController::class,'updateBrand'])->name('update.brand');
@@ -71,12 +72,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/update-Size',[SizeController::class,'updateSize'])->name('update.size');
 
     Route::get('/product/add',[ProductController::class,'index'])->name('product.add');
-//    Route::post('/product/create',[ProductController::class,'create'])->name('product.create');
     Route::post('/create/product',[ProductController::class,'createProduct'])->name('product.create');
     Route::get('/product/manage',[ProductController::class,'manage'])->name('product.manage');
+    Route::get('/product/detail/{id}',[ProductController::class,'detail'])->name('product.detail');
     Route::get('/product/edit/{id}',[ProductController::class,'editProduct'])->name('product.edit');
-    Route::post('/product/update',[ProductController::class,'updateProduct'])->name('product.update');
-    Route::post('delete-product',[ProductController::class,'productDelete'])->name('product.delete');
+    Route::post('/product/update/{id}',[ProductController::class,'updateProduct'])->name('product.update');
+    Route::get('delete-product/{id}',[ProductController::class,'productDelete'])->name('product.delete');
     Route::get('/status-brand/{id}',[ProductController::class,'manage'])->name('product.status');
 
 

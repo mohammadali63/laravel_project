@@ -67,13 +67,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('shop')}}">Shop page</a></li>
-                    <li><a href="{{route('single.product')}}">Single product</a></li>
-                    <li><a href="{{route('cart')}}">Cart</a></li>
-                    <li><a href="{{route('checkout')}}">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
+                    @foreach($categories as $category)
+                        <li class=""><a href="{{route('shop')}}">{{$category->category_name	}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
