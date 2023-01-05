@@ -26,12 +26,6 @@ class BrandController extends Controller
         return back()->with('massage','Status Info Updated');
     }
 
-//    public function brandStatus($id)
-//    {
-//        Brand::brandStatus($id);
-//        return back()->with('massage','status info update');
-//
-//    }
 
 
     public function deleteBrand(Request $request)

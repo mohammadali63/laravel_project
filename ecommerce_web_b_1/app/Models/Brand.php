@@ -48,16 +48,7 @@ class Brand extends Model
         }
         self::$brand->save();
     }
-//    public static function brandStatus($id){
-//        self::$brand = Brand::find($id);
-//        if (self::$brand->status == 1){
-//            self::$brand->status =0;
-//        }
-//        else{
-//            self::$brand->status =1;
-//        }
-//        self::$brand->save();
-//    }
+
 
     public static function brandDelete($request){
         self::$brand=Brand::find($request->brand_id);

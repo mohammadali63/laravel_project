@@ -53,7 +53,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/barand',[BrandController::class,'index'])->name('barand');
     Route::post('/brand',[BrandController::class,'Savebrand'])->name('brand');
-//    Route::get('/status-brand/{id}',[BrandController::class,'brandStatus'])->name('brand.status');
     Route::get('status/brand/{id}',[BrandController::class,'brandStatus'])->name('status.brand');
     Route::post('delete-brand',[BrandController::class,'deleteBrand'])->name('brand.delete');
     Route::get('/edit-brand/{id}',[BrandController::class,'editBrand'])->name('edit.brand');
