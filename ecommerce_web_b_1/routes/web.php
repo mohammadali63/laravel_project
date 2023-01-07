@@ -9,6 +9,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +28,13 @@ use App\Http\Controllers\ProductController;
 //});
 
 Route::get('/',[EcommerceController::class,'index'])->name('home');
-Route::get('/shop',[EcommerceController::class,'shop'])->name('shop');
-Route::get('/single-product',[EcommerceController::class,'productDetails'])->name('single.product');
-Route::get('/cart',[EcommerceController::class,'cart'])->name('cart');
-Route::get('/checkout',[EcommerceController::class,'checkout'])->name('checkout');
+Route::get('/shop/{id}',[EcommerceController::class,'shop'])->name('shop');
+Route::get('/single-product/{id}',[EcommerceController::class,'productDetails'])->name('single.product');
+Route::post('/cart/add/{id}',[CartController::class,'index'])->name('cart.add');
+Route::get('/cart/show',[CartController::class,'show'])->name('cart.show');
+Route::get('/cart/remove/{id}',[CartController::class,'remove'])->name('cart.remove');
+Route::post('/cart/update',[CartController::class,'update'])->name('cart.update');
+Route::get('/checkout',[CheckoutController::class,'index'])->name('checkout');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 

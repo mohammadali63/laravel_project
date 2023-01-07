@@ -56,8 +56,6 @@ class HomeController extends Controller
             'blog'=>$blog,
             'categoryWiseBlog'=>$categoryWiseBlog,
             'comments'=>$comments,
-
-
         ]);
     }
 

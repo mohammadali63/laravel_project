@@ -68,7 +68,7 @@
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{{route('home')}}">Home</a></li>
                     @foreach($categories as $category)
-                        <li class=""><a href="{{route('shop')}}">{{$category->category_name	}}</a></li>
+                        <li class=""><a href="{{route('shop',['id'=>$category->id])}}">{{$category->category_name	}}</a></li>
                     @endforeach
                 </ul>
             </div>

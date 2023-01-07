@@ -46,10 +46,10 @@ class BlogController extends Controller
     }
     public function makeSlag($request){
         if ($request->slug){
-            $str = $request->slug;
+            $str = strtolower($request->slug);
             return preg_replace('/\s+/u','-',trim($str));
         }
-        $str = $request->title;
+        $str = strtolower($request->title);
         return preg_replace('/\s+/u','-',trim($str));
     }
 

@@ -67,12 +67,13 @@
 <script src="{{asset('frontEndasset')}}/assets/js/main.js"></script>
 <script>
     $('.details').click(function (){
-        blogId=$(this).attr('id')
+        var blogId=$(this).attr('id')
         $.ajax({
             method:"GET",
             url:'api/blog-details/'+blogId,
             dataType:'JSON',
             success:function (data){
+                // alert(data.id)
                 $('#title').text(data.title);
                 $('#image').attr('src',data.image);
                 $('#description').text(data.description.substr(0,100));
@@ -83,10 +84,7 @@
     })
 </script>
 
-{{--data-bs-toggle="modal" data-bs-target="#exampleModal"--}}
-{{--// alert(data.id)--}}
-{{--$('#title').text(data.title);--}}
-{{--$('#description').text(data.description.substr(0,15));--}}
+
 
 
 <!-- Button trigger modal -->
