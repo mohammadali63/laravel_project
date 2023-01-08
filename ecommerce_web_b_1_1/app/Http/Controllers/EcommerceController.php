@@ -12,7 +12,7 @@ class EcommerceController extends Controller
     public function index()
     {
         return view('frontEnd.home.home',[
-            'latest_product'=>Product::where('status', 1)->orderBy('id', 'desc')->take(10)->get(),
+            'latest_product'=>Product::where('status',1)->orderBy('id','desc')->take(10)->get(),
             'brands'=> Brand::all(),
             'home_categories'=>Category::where('home_status',1)->get()
         ]);

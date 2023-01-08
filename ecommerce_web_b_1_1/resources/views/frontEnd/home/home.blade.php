@@ -92,7 +92,7 @@
                             @foreach($latest_product as $product)
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="{{asset($product->image)}}" alt="" style="height: 280px;">
+                                        <img src="{{asset($product->image)}}" alt="" style="height: 260px;">
                                         <div class="product-hover">
                                             <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="{{route('product.details',['id'=>$product->id])}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
