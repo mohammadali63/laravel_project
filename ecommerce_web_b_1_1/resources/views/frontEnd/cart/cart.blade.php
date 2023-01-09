@@ -98,7 +98,7 @@
                                                 <a href="single-product.html">{{$cart_product->name}}</a>
                                             </td>
                                             <td class="product-price">
-                                                <span class="amount">{{$cart_product->price}}</span>
+                                                <span class="amount">{{$cart_product->price}}TK.</span>
                                             </td>
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
@@ -110,7 +110,7 @@
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">
-                                                <span class="amount">{{$cart_product->price * $cart_product->quantity  }}</span>
+                                                <span class="amount">{{$cart_product->price * $cart_product->quantity }}TK.</span>
                                             </td>
                                         </tr>
                                         @php($sum = $sum + ($cart_product->price * $cart_product->quantity))
@@ -145,25 +145,25 @@
                                         <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Cart Subtotal</th>
-                                            <td><span class="amount">{{$sum}}</span></td>
+                                            <td><span class="amount">{{$sum}}TK.</span></td>
                                         </tr>
                                         <tr class="cart-subtotal">
                                             <th>Tax Amount</th>
-                                            <td><span class="amount">{{ $tax = ($sum = $sum * 15)/100 }}</span></td>
+                                            <td><span class="amount">{{ $tax = ($sum = $sum * 15)/100 }}TK.</span></td>
                                         </tr>
                                         <tr class="shipping">
                                             <th>Shipping and Handling</th>
-                                            <td>{{$shipping = 100}}</td>
+                                            <td>{{$shipping = 100}}TK.</td>
                                         </tr>
                                         <tr class="order-total">
                                             <th>Order Total</th>
-                                            <td><strong><span class="amount">{{$orderTotal = $sum + $tax + $shipping}}</span></strong> </td>
+                                            <td><strong><span class="amount">{{$orderTotal = $sum + $tax + $shipping}}TK.</span></strong> </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <h2>
-                                    <a class="shipping-calculator-button"  href="{{route('checkout')}}" >Chack Out</a>
+                                    <a class=" btn  shipping-calculator-button"  href="{{route('checkout')}}" >Chack Out</a>
                                 </h2>
                             </div>
                         </div>

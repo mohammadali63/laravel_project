@@ -82,15 +82,35 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @php($sum=0)
                                 @foreach($cart_products as $cart_product)
                                 <tr>
                                     <td>{{$cart_product->name}}</td>
-                                    <td>{{$cart_product->price}}</td>
+                                    <td>{{$cart_product->price}}TK.</td>
                                     <td>{{$cart_product->quantity}}</td>
-                                    <td>{{$cart_product->price*$cart_product->quantity}}</td>
+                                    <td>{{$cart_product->price*$cart_product->quantity}}TK.</td>
                                 </tr>
+                                    @php($sum = $sum + ($cart_product->price * $cart_product->quantity))
                                 @endforeach
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th colspan="3">Sub Total</th>
+                                    <td>{{$sum}}TK.</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">Tax Amaunt</th>
+                                    <td>{{$tax = ($sum * 15)/100}}TK.</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">Shiping Cost</th>
+                                    <td>{{$shipingCost = 100}}TK.</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3">Total Payable</th>
+                                    <td>{{$sum= $sum+$tax+$shipingCost}}TK.</td>
+                                </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

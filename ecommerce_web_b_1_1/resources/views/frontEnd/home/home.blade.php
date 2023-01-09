@@ -92,7 +92,7 @@
                             @foreach($latest_product as $product)
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="{{asset($product->image)}}" alt="" style="height: 260px;">
+                                        <img src="{{asset($product->image)}}" alt="" style="height: 280px;">
                                         <div class="product-hover">
                                             <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="{{route('product.details',['id'=>$product->id])}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -100,7 +100,7 @@
                                     </div>
                                     <h2><a href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a></h2>
                                     <div class="product-carousel-price">
-                                        <ins>{{$product->selling_price}}</ins> <del>{{$product->regular_price}}</del>
+                                        <ins>{{$product->selling_price}}TK.</ins> <del>{{$product->regular_price}}TK.</del>
                                     </div>
                                 </div>
                             @endforeach
@@ -148,7 +148,7 @@
                                     </div>
                                     <h2><a href="{{route('product.details',['id'=>$product->id])}}">{{$product->name}}</a></h2>
                                     <div class="product-carousel-price">
-                                        <ins>{{$product->selling_price}}</ins> <del>{{$product->regular_price}}</del>
+                                        <ins>{{$product->selling_price}}TK.</ins> <del>{{$product->regular_price}}TK.</del>
                                     </div>
                                 </div>
                             @endforeach
