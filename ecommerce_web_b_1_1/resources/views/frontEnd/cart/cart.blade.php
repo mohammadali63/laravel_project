@@ -161,6 +161,9 @@
                                         </tr>
                                         </tbody>
                                     </table>
+                                    <?php
+                                    Session::put('sum',$sum);
+                                    ?>
                                 </div>
                                 <h2>
                                     <a class=" btn  shipping-calculator-button"  href="{{route('checkout')}}" >Chack Out</a>

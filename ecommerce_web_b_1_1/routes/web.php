@@ -11,6 +11,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChackoutController;
+use App\Http\Controllers\CustomerAuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,13 @@ Route::get('/cart/show',[CartController::class,'show'])->name('cart.show');
 Route::get('/cart/remove/{id}',[CartController::class,'remove'])->name('cart.remove');
 Route::post('/cart/update/{id}',[CartController::class,'update'])->name('cart.update');
 Route::get('/checkout',[ChackoutController::class,'index'])->name('checkout');
+Route::post('/order/new',[ChackoutController::class,'newOrder'])->name('order.new');
+Route::get('/order/complite',[ChackoutController::class,'completeOrder'])->name('complete-order');
+
+
+Route::get('/costomer/login',[CustomerAuthController::class,'CustomerLogin'])->name('customer.login');
+Route::post('/costomer/login',[CustomerAuthController::class,'CustomerLogin'])->name('customer.login');
+Route::post('/costomer/logout',[CustomerAuthController::class,'CustomerLogout'])->name('costomer.logout');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 //    Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');

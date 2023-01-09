@@ -24,30 +24,36 @@
                     <div class="card">
                         <div class="card-header"><h4 class="text-center">Checkout Form</h4></div>
                         <div class="card-body">
-                            <form action="" method="post">
+                            <form action="{{route('order.new')}}" method="post">
                                 @csrf
+                                @if(!Session::get('customer_id'))
                                 <div class="form-group row">
                                     <label class="col-md-4">Full Name</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="name">
+                                        <span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ''}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-4">Email Adderess</label>
                                     <div class="col-md-8">
                                         <input type="email" class="form-control" name="email">
+                                        <span class="text-danger">{{$errors->has('email') ? $errors->first('email') : ''}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-4">Mobile Number</label>
                                     <div class="col-md-8">
                                         <input type="number" class="form-control" name="mobile">
+                                        <span class="text-danger">{{$errors->has('mobile') ? $errors->first('mobile') : ''}}</span>
                                     </div>
                                 </div>
+                                @endif
                                 <div class="form-group row">
                                     <label class="col-md-4">Delivery Address</label>
                                     <div class="col-md-8">
                                        <textarea class="form-control" rows="5" name="delivery_address"></textarea>
+                                        <span class="text-danger">{{$errors->has('delivery_address') ? $errors->first('delivery_address') : ''}}</span>
                                     </div>
                                 </div>
 
@@ -108,10 +114,15 @@
                                 </tr>
                                 <tr>
                                     <th colspan="3">Total Payable</th>
-                                    <td>{{$sum= $sum+$tax+$shipingCost}}TK.</td>
+                                    <td>{{$orderTotal = $sum+$tax+$shipingCost}}TK.</td>
                                 </tr>
                                 </tfoot>
                             </table>
+                            <?php
+                                Session::put('order_total',$orderTotal);
+                                Session::put('tax_total',$tax);
+                                Session::put('shiping_total',$shipingCost);
+                            ?>
                         </div>
                     </div>
                 </div>

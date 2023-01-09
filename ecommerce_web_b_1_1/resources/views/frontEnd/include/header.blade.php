@@ -4,11 +4,9 @@
             <div class="col-md-8">
                 <div class="user-menu">
                     <ul>
-                        <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                         <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                         <li><a href="{{route('cart.show')}}"><i class="fa fa-user"></i> My Cart</a></li>
-                        <li><a href="{{route('checkout')}}"><i class="fa fa-user"></i> Checkout</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -23,14 +21,20 @@
                                 <li><a href="#">GBP</a></li>
                             </ul>
                         </li>
+                        @if(Session::get('customer_id'))
                         <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">{{session::get('customer_name')}}</span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">French</a></li>
-                                <li><a href="#">German</a></li>
+                                <li><a href="#">My Acount</a></li>
+                                <li><a href="#" onclick="event.preventDefault(); document.getElementById('cutomerlogoutForm').submit()">Logout</a></li>
+                                <form action="{{route('costomer.logout')}}" method="post" id="cutomerlogoutForm">
+                                    @csrf
+                                </form>
                             </ul>
                         </li>
+                        @else
+                        <li><a href="{{route('customer.login')}}"><i class="fa fa-user"></i>My Acount</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -47,7 +51,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    <a href="{{route('cart.show')}}">Cart - <span class="cart-amunt">{{Session::get('sum')}}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{count(Cart::getContent())}}</span></a>
                 </div>
             </div>
         </div>
