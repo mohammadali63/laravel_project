@@ -24,13 +24,13 @@
                         </tr>
                         <tr>
                             <th>Order Total</th>
-                            <th>{{$order->order_total}}</th>
+                            <th>{{$order->order_total}} TK.</th>
                         </tr> <tr>
                             <th>Tax Total</th>
-                            <th>{{$order->tax_total}}</th>
+                            <th>{{$order->tax_total}} TK.</th>
                         </tr> <tr>
                             <th>Shipping Total</th>
-                            <th>{{$order->shipping_total}}</th>
+                            <th>{{$order->shipping_total}} TK.</th>
                         </tr>
                         <tr>
                             <th>Customer Info</th>
@@ -74,9 +74,9 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$orderDetail->product_name}}</td>
-                                <td>{{$orderDetail->product_price}}</td>
+                                <td>{{$orderDetail->product_price}} TK.</td>
                                 <td>{{$orderDetail->product_quantity}}</td>
-                                <td>{{$orderDetail->product_price * $orderDetail->product_quantity}}</td>
+                                <td>{{$orderDetail->product_price * $orderDetail->product_quantity}} TK.</td>
                             </tr>
                         @endforeach
                         </tbody>
