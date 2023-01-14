@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="copyright">
-                    <p>&copy; 2023 Shakhawat. All Rights Reserved. <a href="https://shakhawath.xyz/" target="_blank">shakhawath.xyz</a></p>
+                    <p>&copy; 2023 Mohammad Ali. All Rights Reserved. <a href="https://http://engali.me" target="_blank">engali.me</a></p>
                 </div>
             </div>
             <div class="col-md-4">
