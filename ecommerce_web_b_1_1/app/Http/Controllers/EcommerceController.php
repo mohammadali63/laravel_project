@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Promo;
 use Illuminate\Http\Request;
 
 class EcommerceController extends Controller
@@ -14,7 +15,8 @@ class EcommerceController extends Controller
         return view('frontEnd.home.home',[
             'latest_product'=>Product::where('status',1)->orderBy('id','desc')->take(10)->get(),
             'brands'=> Brand::all(),
-            'home_categories'=>Category::where('home_status',1)->get()
+            'home_categories'=>Category::where('home_status',1)->get(),
+            'promos' => Promo::where('status',1)->get()
         ]);
     }
     public function shop($id)

@@ -13,6 +13,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChackoutController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\AdminOrderController;
+use App\Http\Controllers\PromoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,5 +100,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/admin/order/detail/{id}',[AdminOrderController::class,'Orderdetail'])->name('admin.order-detail');
     Route::get('/admin/order/invoice/{id}',[AdminOrderController::class,'Invoice'])->name('admin.order-invoice');
     Route::get('/admin/order/delete/{id}',[AdminOrderController::class,'delete'])->name('admin.order-delete');
+
+    Route::get('/promo',[PromoController::class,'index'])->name('add.promo');
+    Route::post('/promo/save',[PromoController::class,'savePromo'])->name('save.promo');
 
 });
