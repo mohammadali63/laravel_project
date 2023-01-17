@@ -10,7 +10,10 @@ class PromoController extends Controller
     public $promo;
     public function index()
     {
-        return view('admin.promo.promoform');
+        return view('admin.promo.promoform',
+        [
+            'managePromos' => Promo::where('status',1)->get()
+        ]);
     }
 
     public function savePromo(Request $request)

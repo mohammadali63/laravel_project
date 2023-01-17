@@ -18,12 +18,12 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class=" mb-3">
-                                        <input class="form-control" name="icontag" type="text" placeholder="Icon Tag....."  />
+                                        <input class="form-control" name="icontag" type="text" placeholder="promo Icon class name....."  />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class=" mb-3">
-                                        <input class="form-control" name="text" type="text" placeholder="Text....."  />
+                                        <input class="form-control" name="text" type="text" placeholder="Pragraph Text....."  />
                                     </div>
                                 </div>
                             </div>
@@ -32,10 +32,52 @@
                                 <div class="d-grid"><button  type="submit" class="btn btn-primary btn-block" >Submit</button></div>
                             </div>
                         </form>
+
+                        <div class="card mb-4 mt-3">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Promo Table
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple " class="table table-dark table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>SL No</th>
+                                        <th>I tag Class</th>
+                                        <th>Text</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($managePromos as $promo)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$promo->icontag}}</td>
+                                            <td>{{$promo->text}}</td>
+                                            <td>{{($promo->status == 1 ? 'Active' : 'Inactive')}}</td>
+                                            <td >
+                                                <div class="d-flex">
+                                                    <a href="" class="btn btn-info btn-sm me-2">Edit</a>
+                                                    <form action="" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="cat_id" value="">
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure this delete!')">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 @endsection
 
