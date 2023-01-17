@@ -7,51 +7,51 @@
             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboards">
                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-dashboards" type="button"><i class="bi bi-house-door-fill"></i></button>
             </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Application">
+            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="User Application">
                 <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-application" type="button"><i class="bi bi-grid-fill"></i></button>
             </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Widgets">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-widgets" type="button"><i class="bi bi-briefcase-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="eCommerce">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-ecommerce" type="button"><i class="bi bi-bag-check-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Components">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-components" type="button"><i class="bi bi-bookmark-star-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Forms">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-forms" type="button"><i class="bi bi-file-earmark-break-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Tables">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-tables" type="button"><i class="bi bi-file-earmark-spreadsheet-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Authentication">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-authentication" type="button"><i class="bi bi-lock-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Icons">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-icons" type="button"><i class="bi bi-cloud-arrow-down-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Content">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-content" type="button"><i class="bi bi-cone-striped"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-pie-chart-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Maps">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-maps" type="button"><i class="bi bi-pin-map-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Pages">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button"><i class="bi bi-award-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-pie-chart-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Maps">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-maps" type="button"><i class="bi bi-pin-map-fill"></i></button>
-            </li>
-            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Pages">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button"><i class="bi bi-award-fill"></i></button>
-            </li>
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Widgets">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-widgets" type="button"><i class="bi bi-briefcase-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="eCommerce">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-ecommerce" type="button"><i class="bi bi-bag-check-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Components">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-components" type="button"><i class="bi bi-bookmark-star-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Forms">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-forms" type="button"><i class="bi bi-file-earmark-break-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Tables">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-tables" type="button"><i class="bi bi-file-earmark-spreadsheet-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Authentication">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-authentication" type="button"><i class="bi bi-lock-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Icons">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-icons" type="button"><i class="bi bi-cloud-arrow-down-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Content">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-content" type="button"><i class="bi bi-cone-striped"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-pie-chart-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Maps">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-maps" type="button"><i class="bi bi-pin-map-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Pages">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button"><i class="bi bi-award-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-pie-chart-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Maps">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-maps" type="button"><i class="bi bi-pin-map-fill"></i></button>--}}
+{{--            </li>--}}
+{{--            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Pages">--}}
+{{--                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button"><i class="bi bi-award-fill"></i></button>--}}
+{{--            </li>--}}
         </ul>
     </div>
     <div class="textmenu">
@@ -82,11 +82,8 @@
                         </div>
                         <small class="mb-0">Some placeholder content</small>
                     </div>
-                    <a href="app-emailbox.html" class="list-group-item"><i class="bi bi-envelope"></i>Email</a>
-                    <a href="app-chat-box.html" class="list-group-item"><i class="bi bi-chat-left-text"></i>Chat Box</a>
-                    <a href="app-file-manager.html" class="list-group-item"><i class="bi bi-archive"></i>File Manager</a>
-                    <a href="app-to-do.html" class="list-group-item"><i class="bi bi-check2-square"></i>Todo List</a>
-                    <a href="app-invoice.html" class="list-group-item"><i class="bi bi-receipt"></i>Invoice</a>
+                    <a href="{{route('useradd')}}" class="list-group-item"><i class="bi bi-envelope"></i>User Add Form</a>
+                    <a href="{{route('user.manage')}}" class="list-group-item"><i class="bi bi-envelope"></i>User Manage Form</a>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-widgets">

@@ -28,7 +28,7 @@
     <link href="{{asset('adminAsset')}}/assets/css/semi-dark.css" rel="stylesheet" />
     <link href="{{asset('adminAsset')}}/assets/css/header-colors.css" rel="stylesheet" />
 
-    <title>Skodash - Bootstrap 5 Admin Template</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>
