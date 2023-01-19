@@ -36,7 +36,7 @@
                         <div class="card mb-4 mt-3">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Promo Table
+                                Promo Manage Table
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple " class="table table-dark table-striped table-hover">
@@ -59,11 +59,11 @@
                                             <td >
                                                 <div class="d-flex">
                                                     <a href="" class="btn btn-info btn-sm me-2">Edit</a>
-                                                    <form action="" method="post">
-                                                        @csrf
-                                                        <input type="hidden" name="cat_id" value="">
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure this delete!')">Delete</button>
-                                                    </form>
+                                                        <form action="{{route('promo.delete')}}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="promo_id" value="{{$promo->id}}">
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure this delete!')">Delete</button>
+                                                        </form>
                                                 </div>
                                             </td>
                                         </tr>
@@ -77,7 +77,6 @@
             </div>
         </div>
     </div>
-
 
 @endsection
 

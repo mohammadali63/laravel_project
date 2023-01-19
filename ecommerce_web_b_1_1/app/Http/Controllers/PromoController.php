@@ -24,4 +24,10 @@ class PromoController extends Controller
         $this->promo->save();
         return back()->with('massage','New Promo create Success');
     }
+    public function DeletePromo(Request $request)
+    {
+        $this->promo = Promo::find($request->promo_id);
+        $this->promo->delete();
+        return back()->with('massage','New Promo Delete Success');
+    }
 }

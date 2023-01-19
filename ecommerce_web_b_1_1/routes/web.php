@@ -103,5 +103,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/promo',[PromoController::class,'index'])->name('add.promo');
     Route::post('/promo/save',[PromoController::class,'savePromo'])->name('save.promo');
+    Route::post('/promo/delete',[PromoController::class,'DeletePromo'])->name('promo.delete');
 
 });
