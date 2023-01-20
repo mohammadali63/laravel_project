@@ -14,6 +14,7 @@ use App\Http\Controllers\ChackoutController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\SubsCribeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,5 +105,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/promo',[PromoController::class,'index'])->name('add.promo');
     Route::post('/promo/save',[PromoController::class,'savePromo'])->name('save.promo');
     Route::post('/promo/delete',[PromoController::class,'DeletePromo'])->name('promo.delete');
+
+    Route::post('/Subscribe/save',[SubsCribeController::class,'SaveSubscribe'])->name('save.sbuscribe');
 
 });
