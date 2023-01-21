@@ -15,4 +15,9 @@ class SubsCribeController extends Controller
         $this->subuscribe->save();
         return back();
     }
+
+    public function manageSubscribe()
+    {
+        return view('admin.subscribe.subs-manage');
+    }
 }

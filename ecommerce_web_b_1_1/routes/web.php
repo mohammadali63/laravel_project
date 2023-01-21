@@ -107,5 +107,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/promo/delete',[PromoController::class,'DeletePromo'])->name('promo.delete');
 
     Route::post('/Subscribe/save',[SubsCribeController::class,'SaveSubscribe'])->name('save.sbuscribe');
+    Route::get('/Subscribe/manage',[SubsCribeController::class,'manageSubscribe'])->name('manage.sbuscribe');
 
 });
