@@ -24,7 +24,25 @@
 {{--                                        <th>Action</th>--}}
                                     </tr>
                                     </thead>
-
+                                    <tbody>
+                                    @foreach($subscribes as $subscribe)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$subscribe->subsemail}}</td>
+                                            <td>{{($subscribe->status == 1 ? 'Active' : 'Inactive')}}</td>
+{{--                                            <td >--}}
+{{--                                                <div class="d-flex">--}}
+{{--                                                    <a href="" class="btn btn-info btn-sm me-2">Edit</a>--}}
+{{--                                                    <form action="{{route('promo.delete')}}" method="post">--}}
+{{--                                                        @csrf--}}
+{{--                                                        <input type="hidden" name="promo_id" value="{{$promo->id}}">--}}
+{{--                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure this delete!')">Delete</button>--}}
+{{--                                                    </form>--}}
+{{--                                                </div>--}}
+{{--                                            </td>--}}
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
                                 </table>
                             </div>
                         </div>

@@ -18,6 +18,8 @@ class SubsCribeController extends Controller
 
     public function manageSubscribe()
     {
-        return view('admin.subscribe.subs-manage');
+        return view('admin.subscribe.subs-manage',[
+            'subscribes'=>Subscribe::all()
+        ]);
     }
 }
