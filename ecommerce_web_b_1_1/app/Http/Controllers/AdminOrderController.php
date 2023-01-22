@@ -20,7 +20,7 @@ class AdminOrderController extends Controller
 
     public function Invoice($id)
     {
-
+        return view('admin.order.invoice');
     }
 
     public function delete($id)
