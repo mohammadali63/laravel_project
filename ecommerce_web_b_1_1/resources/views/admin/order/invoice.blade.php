@@ -113,8 +113,8 @@
                                             </td>
 
                                             <td>
-                                                Invoice #: 00{{$order->id}}<br />
-                                                Order Date: {{$order->order_date}}<br />
+                                                Invoice #: 00{{$orders->id}}<br />
+                                                Order Date: {{$orders->order_date}}<br />
                                                 Delivery Date: {{ date('Y-m-d') }}
                                             </td>
                                         </tr>

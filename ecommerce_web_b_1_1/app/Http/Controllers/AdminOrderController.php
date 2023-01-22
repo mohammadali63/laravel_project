@@ -20,7 +20,9 @@ class AdminOrderController extends Controller
 
     public function Invoice($id)
     {
-        return view('admin.order.invoice');
+        return view('admin.order.invoice',[
+            'orders'=> Oder::find($id)
+        ]);
     }
 
     public function delete($id)
